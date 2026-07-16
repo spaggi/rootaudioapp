@@ -40,6 +40,10 @@ Requirement: `pip install pydub audioop-lts` and an installed `ffmpeg`.
 
 ## 3. Run the app
 
+**On a PC:**
+
+Just open [index.html](index.html) directly in a browser (double-click it) – no server needed. Note that PWA install and offline caching won't be available this way since those require the page to be served over `http://`/`https://`.
+
 **Locally (your own PC on the same Wi-Fi):**
 
 Run [start-server.ps1](start-server.ps1) – starts a local web server and prints the URL to open on the iPhone in Safari:
