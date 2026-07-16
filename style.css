@@ -1,0 +1,224 @@
+:root {
+  --forest-dark: #1c1613;
+  --parchment: #f1e3c6;
+  --accent: #c0532b;
+  --accent-light: #e08a4f;
+  --panel: rgba(28, 22, 19, 0.72);
+  --panel-border: rgba(241, 227, 198, 0.18);
+  --text: #f1e3c6;
+  --text-dim: rgba(241, 227, 198, 0.65);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("background.png") center 30% / cover no-repeat, var(--forest-dark);
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,16,14,0.55) 0%, rgba(20,16,14,0.80) 55%, rgba(20,16,14,0.92) 100%);
+}
+
+.app {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 3vh, 2.2rem);
+  padding: max(1.5rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(2rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
+  justify-content: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: min(92vw, 420px);
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.55));
+}
+
+.transport {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(6px);
+  padding: 0.6rem 1.1rem 0.6rem 0.6rem;
+  border-radius: 999px;
+  width: min(100%, 420px);
+}
+
+.transport-btn {
+  flex: none;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: var(--parchment);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.2s ease;
+}
+
+.transport-btn:active {
+  transform: scale(0.92);
+}
+
+.transport-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.icon-hidden {
+  display: none !important;
+}
+
+.now-playing {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.theme-section {
+  width: min(100%, 420px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(6px);
+  padding: 1.1rem;
+  border-radius: 1.25rem;
+}
+
+.theme-select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1.05rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--panel-border);
+  background: rgba(241, 227, 198, 0.08);
+  color: var(--text);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f1e3c6'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  background-size: 1.2rem;
+}
+
+.theme-select option {
+  color: #000;
+}
+
+.play-theme-btn {
+  width: 100%;
+  padding: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: none;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, var(--accent-light), var(--accent));
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(192, 83, 43, 0.45);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.play-theme-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(192, 83, 43, 0.4);
+}
+
+.play-theme-btn.is-active {
+  outline: 2px solid var(--parchment);
+  outline-offset: 2px;
+}
+
+.icon-section {
+  width: min(100%, 420px);
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+  border-radius: 1.1rem;
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  backdrop-filter: blur(6px);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.2s ease;
+}
+
+.icon-btn:active {
+  transform: scale(0.96);
+}
+
+.icon-btn.is-active {
+  background: rgba(192, 83, 43, 0.35);
+  border-color: var(--accent-light);
+}
+
+.icon-btn svg {
+  width: 2.1rem;
+  height: 2.1rem;
+  fill: var(--text);
+}
+
+.icon-btn .pip {
+  fill: var(--forest-dark);
+}
+
+.icon-btn rect[rx] {
+  fill: var(--text);
+}
+
+.icon-label {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+@media (min-width: 720px) {
+  .app {
+    max-width: 560px;
+  }
+}
