@@ -1,4 +1,8 @@
 @echo off
+:: This script downloads and runs yt-dlp, a third-party executable, against
+:: the URLs in links.txt. Only run it if you trust yt-dlp (https://github.com/yt-dlp/yt-dlp).
+:: If you don't, write and review your own downloader instead (e.g. vibe-code one)
+:: rather than trusting this one blindly.
 chcp 65001 >nul
 setlocal enabledelayedexpansion
 title YouTube Audio Downloader

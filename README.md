@@ -30,7 +30,7 @@ Requirement for `download_audio.bat`: [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
 ## 2. Adjust volume (optional)
 
-[reduce_volume.py](reduce_volume.py) reduces the volume of an MP3 file by a percentage, e.g. down to 50% of the original volume:
+The Battle theme in particular tends to be noticeably louder than the other tracks and usually needs to be turned down. [reduce_volume.py](reduce_volume.py) reduces the volume of an MP3 file by a percentage, e.g. down to 50% of the original volume:
 
 ```
 python reduce_volume.py "Root OST - Battle Theme (No loop).mp3" "Root OST - Battle Theme (No loop).mp3" 50
