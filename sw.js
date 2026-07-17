@@ -1,4 +1,4 @@
-const CACHE_NAME = "root-audio-v7";
+const CACHE_NAME = "root-audio-v9";
 
 const ASSETS = [
   "./",

@@ -14,4 +14,4 @@ Write-Host "Zum Beenden: Strg+C"
 Write-Host ""
 
 Set-Location $PSScriptRoot
-python -m http.server $port --bind 0.0.0.0
+python server.py $port

@@ -134,7 +134,10 @@ function switchTrack(key, { loop, time = 0 }) {
 }
 
 playPauseBtn.addEventListener("click", () => {
-  if (!currentKey) return;
+  if (!currentKey) {
+    switchTrack(themeSelect.value, { loop: true, time: 0 });
+    return;
+  }
   if (player.paused) player.play();
   else player.pause();
 });
@@ -202,6 +205,8 @@ player.addEventListener("ended", () => {
 
 updateNowPlaying();
 syncPlayPauseIcon();
+
+document.addEventListener("touchmove", (e) => e.preventDefault(), { passive: false });
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
