@@ -109,6 +109,7 @@ function syncPlayPauseIcon() {
 
 function switchTrack(key, { loop, time = 0 }) {
   ensureAudioGraph();
+  requestWakeLock();
   if (key !== "battle" && battleState !== "idle") setBattleState("idle");
 
   const targetGain = key === "battle" ? BATTLE_VOLUME : 1;
